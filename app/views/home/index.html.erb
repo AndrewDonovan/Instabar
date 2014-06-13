@@ -1,0 +1,180 @@
+<!-- <div class="list-tile mango">
+        <span class="tile-title"></span>
+        <ul class="flip-list sixTiles" data-mode="flip-list" data-delay="2000">
+
+        	<#%@user_name.each do |u|%>
+	            <li>
+	                <div>
+	                <img class="full" 	<#%=image_tag u.images.standard_resolution.url, class: "picture"%>
+	 alt="1" />
+	 				</div>
+ 			<#% end %>
+ 				<#% @tags.each do |tags| %>
+
+                <div><img class="full" 	<#%= image_tag tags.images.standard_resolution.url, class: "picture" %>
+ alt="1" /></div>
+ <#% end %>
+            </li>
+
+            <#% @user_name2.each do |u| %>
+            <li>
+                <div><img class="full" 	<#%=image_tag u.images.standard_resolution.url, class: "picture"%>
+ alt="2" /></div>
+ <#% end %>
+         	<#%@user_name.each do |u|%>
+
+                <div><img class="full" <#%=image_tag u.images.standard_resolution.url, class: "picture"%> alt="2" /></div>
+                <#% end %>
+            </li>
+            <li>
+                <div>
+                <img class="full" src="/images/sample/3t.gif" alt="3" /></div>
+                <div><img class="full" src="/images/sample/3tw.gif" alt="3" /></div>
+            </li>
+
+        </ul>
+    </div>
+
+<script type="text/javascript">
+    $(".live-tile, .flip-list").not(".exclude").liveTile();
+</script>
+
+
+
+
+ -->
+
+
+
+
+ <%= form_tag root_path, :method => 'get' do %>
+    
+    
+<header>
+<%= submit_tag "SEARCH INSTAGRAM USERS AND HASHTAGS", class:"button expand" %>
+
+</header>
+
+<!--    <div class="row">
+ -->    <div class="large-3 columns">
+      <label>Search @username
+<%= text_field_tag :query, params[:query] %>
+      </label>
+
+      <div class ="gram">
+
+
+   <% if @user_name.present? %>
+<!--    <h1><%=@user_name_Name%></h1>
+ -->
+	<%@user_name.each do |u|%>
+
+	<%=image_tag u.images.standard_resolution.url, class: "picture"%>
+
+	<% end %>
+	<% end %>
+
+</div>
+
+
+    </div>
+
+
+
+
+
+
+<!--    <div class="row">
+ -->    <div class="large-3 columns">
+      <label>Search @username
+<%= text_field_tag :keyword, params[:keyword] %>
+      </label>
+      <div class ="gram">
+
+   <% if @user_name2.present? %>
+
+<!--    <h1><%=@user_name_Name2%></h1>
+ -->
+
+	<% @user_name2.each do |u| %>
+
+	<%=image_tag u.images.standard_resolution.url, class: "picture"%>
+
+	<% end %>
+	<% end %>
+
+</div>
+    </div>
+
+
+
+
+
+
+
+<!--    <div class="row">
+ -->    <div class="large-3 columns">
+      <label>Search #hashtag
+<%= text_field_tag :hashword, params[:hashword] %>
+      </label>
+
+      <div class ="gram">
+
+   <% if @tags.present? %>
+
+<!--    <h1><#%= params[:hashword] %></h1>
+ -->
+	<% @tags.each do |tags| %>
+
+	<%= image_tag tags.images.standard_resolution.url, class: "picture" %>
+
+	<% end %>
+	<% end %>
+
+</div>
+
+
+</div>
+
+
+
+
+<!--    <div class="row">
+ -->    <div class="large-3 columns">
+      <label>Search #hashtag
+<%= text_field_tag :hashword2, params[:hashword2] %>
+      </label>
+
+      <div class ="gram">
+
+   <% if @tags2.present? %>
+
+<!--    <h1><#%= params[:hashword2] %></h1>
+ -->
+	<% @tags2.each do |tags| %>
+
+	<%= image_tag tags.images.standard_resolution.url, class: "picture" %>
+
+	<% end %>
+	<% end %>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
